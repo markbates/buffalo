@@ -17,7 +17,7 @@ RUN npm i -g --no-progress yarn \
     && yarn config set yarn-offline-mirror-pruning true
 
 # Pulling docker binary from releases
-RUN curl -sf https://gobinaries.com/gobuffalo/buffalo/buffalo@v0.16.22| sh 
+RUN curl -sf https://gobinaries.com/gobuffalo/buffalo/buffalo@v0.16.23| sh 
 RUN go get github.com/gobuffalo/buffalo-pop/v2
 RUN buffalo version
 

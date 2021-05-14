@@ -32,7 +32,7 @@ RUN npm install -g --no-progress yarn \
 # Install golangci
 RUN curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin v1.24.0
 # Installing buffalo binary
-RUN curl -sf https://gobinaries.com/gobuffalo/buffalo/buffalo@v0.16.22 | sh 
+RUN curl -sf https://gobinaries.com/gobuffalo/buffalo/buffalo@v0.16.23 | sh 
 RUN go get github.com/gobuffalo/buffalo-pop/v2
 RUN buffalo version
 
