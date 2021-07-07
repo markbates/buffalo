@@ -201,6 +201,12 @@ var newCmd = &cobra.Command{
 		}
 		run.WithGroup(gg)
 
+		g := genny.New()
+		g.Command(exec.Command("go", "mod", "tidy"))
+		if err := run.With(g); err != nil {
+			return nil
+		}
+
 		if err := run.WithNew(gogen.Fmt(app.Root)); err != nil {
 			return err
 		}

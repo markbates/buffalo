@@ -1,5 +1,5 @@
 name: Tests
-on: 
+on:
   push:
     branches:
       - master
@@ -16,13 +16,12 @@ jobs:
     env:
       GO111MODULE: on
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-        path: src/github.com/${{ github.repository }}
-    - name: Test
-      run: |
-        go mod tidy -v
-        go test -tags "sqlite" -cover  ./...
-
+      - name: Checkout code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+          path: src/github.com/${{ github.repository }}
+      - name: Test
+        run: |
+          go mod tidy -v
+          go test -tags "sqlite" -cover  ./...
